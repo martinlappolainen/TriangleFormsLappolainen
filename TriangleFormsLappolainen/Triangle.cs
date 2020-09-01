@@ -11,6 +11,7 @@ namespace TriangleFormsLappolainen
         public double a; // Первая сторона
         public double b; // Вторая сторона
         public double c; // Третья сторона
+        public double h; // Высота
 
         public Triangle(double A, double B, double C)//Конструктор 
         {
@@ -18,7 +19,15 @@ namespace TriangleFormsLappolainen
             b = B;
             c = C;
 
+        }
+        public Triangle()
+        {
 
+        }
+        public Triangle(double A,double H)
+        {
+            a = A;
+            h = H;
         }
         public string OutputA() // вывод стороны A
         {
@@ -66,6 +75,13 @@ namespace TriangleFormsLappolainen
             { return c; }
             set//меняем
             { c = value; }
+        }
+        public double GetSetH// позволяющая устоновить Высоту H
+        {
+            get//устанавливаем
+            { return h; }
+            set//меняем
+            { h = value; }
         }
         public bool ExistTriangle//свойство позволяющее установить, существует ли треугольник с заданными свойствами
         {
