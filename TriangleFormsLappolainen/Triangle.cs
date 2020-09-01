@@ -47,6 +47,12 @@ namespace TriangleFormsLappolainen
             p = a + b + c;//вычисление
             return p;//возврат
         }
+        public double Hypotenuse()
+        {
+            double o;
+            o = (a * a);
+            return o;
+        }
         public double Surface() // аналочно с периметром также делаем и с площадью
         {
             double s = 0;
