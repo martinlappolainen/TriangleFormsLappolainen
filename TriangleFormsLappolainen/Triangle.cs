@@ -41,16 +41,31 @@ namespace TriangleFormsLappolainen
         {
             return Convert.ToString(c);
         }
+        public string OutputH()// вывод Высоты
+        {
+            return Convert.ToString(h);
+        }
         public double Perimeter()// cумма всех сторон типа Double
         {
             double p = 0;
             p = a + b + c;//вычисление
             return p;//возврат
         }
+        public double Height()
+        {
+            double p = 0.5 * (a + b + c);
+            double h = 2 * Math.Sqrt(p * (p - a) * (p - b) * (p - c)) / a;
+            return h;
+        }
+        public double Type()
+        {
+
+        }
         public double Hypotenuse()
         {
             double o;
-            o = (a * a);
+            o = (a * a) +(b* b);
+            c = Math.Sqrt(o);
             return o;
         }
         public double Surface() // аналочно с периметром также делаем и с площадью
