@@ -57,10 +57,7 @@ namespace TriangleFormsLappolainen
             double h = 2 * Math.Sqrt(p * (p - a) * (p - b) * (p - c)) / a;
             return h;
         }
-        public double Type()
-        {
-
-        }
+        
         public double Hypotenuse()
         {
             double o;
