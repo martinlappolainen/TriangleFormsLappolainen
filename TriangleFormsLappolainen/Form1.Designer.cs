@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Run_button = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureTriangle = new System.Windows.Forms.PictureBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -43,7 +43,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureTriangle)).BeginInit();
             this.SuspendLayout();
             // 
             // Run_button
@@ -64,15 +67,16 @@
             this.Run_button.UseVisualStyleBackColor = false;
             this.Run_button.Click += new System.EventHandler(this.Run_button_Click);
             // 
-            // pictureBox1
+            // pictureTriangle
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(559, 159);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(213, 190);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.UseWaitCursor = true;
+            this.pictureTriangle.Image = ((System.Drawing.Image)(resources.GetObject("pictureTriangle.Image")));
+            this.pictureTriangle.Location = new System.Drawing.Point(559, 159);
+            this.pictureTriangle.Name = "pictureTriangle";
+            this.pictureTriangle.Size = new System.Drawing.Size(213, 190);
+            this.pictureTriangle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureTriangle.TabIndex = 1;
+            this.pictureTriangle.TabStop = false;
+            this.pictureTriangle.UseWaitCursor = true;
             // 
             // listView1
             // 
@@ -183,12 +187,58 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "H";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LightGray;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.FlatAppearance.BorderSize = 10;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.button1.Location = new System.Drawing.Point(413, 22);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 131);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Вторая Форма";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.radioButton1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.radioButton1.Location = new System.Drawing.Point(337, 269);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(63, 24);
+            this.radioButton1.TabIndex = 13;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "ABC";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.radioButton2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.radioButton2.Location = new System.Drawing.Point(337, 295);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(52, 24);
+            this.radioButton2.TabIndex = 14;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "AH";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(784, 361);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -199,13 +249,13 @@
             this.Controls.Add(this.txtB);
             this.Controls.Add(this.txtA);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureTriangle);
             this.Controls.Add(this.Run_button);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Работа с треугольниками";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureTriangle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,7 +264,7 @@
         #endregion
 
         private System.Windows.Forms.Button Run_button;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureTriangle;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -227,6 +277,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }
 

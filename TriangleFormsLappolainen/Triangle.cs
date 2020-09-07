@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TriangleFormsLappolainen
 {
@@ -57,7 +58,18 @@ namespace TriangleFormsLappolainen
             double h = 2 * Math.Sqrt(p * (p - a) * (p - b) * (p - c)) / a;
             return h;
         }
-        
+        public double hA()
+        {
+            return Surface() / 2 / a;
+        }
+        public double hB()
+        {
+            return Surface() / 2 / b;
+        }
+        public double hC()
+        {
+            return Surface() / 2 / c;
+        }
         public double Hypotenuse()
         {
             double o;
@@ -110,7 +122,63 @@ namespace TriangleFormsLappolainen
                 else return false;
             }
         }
+        public string TriangleType()
+        {
+            string type = "";
+            if (a == b && b == c)
+            {
+                type = "Равносторонний";
+            }
+            else if ((a == b) && (a != c) || (b == c) && (b != a) || (a == c) && (a != b))
+            {
+                type = "Равнобедренный";
+            }
+            else if (a != b || b != c)
+            {
+                type = "Разносторонний";
+            }
+            else if (c * 2 == (a * 2 + b * 2))
+            {
+                type = "Правильный";
+            }
+            else if (c * 2 > (a * 2 + b * 2))
+            {
+                type = "Тупоугольный";
+            }
+            else if (c * 2 < (a * 2 + b * 2))
+            {
+                type = "Остроугольный";
+            }
+            return type;
+        }
+        public string ImageSource()
+        {
+            string source = Application.StartupPath.Remove(Application.StartupPath.IndexOf("bin")).Replace(@"\", "/") + "Properties/images/";
+            switch (TriangleType())
+            {
+                case "Равносторонний":
+                    source += "equilateral";
+                    break;
+                case "Равнобедренный":
+                    source += "isosceles";
+                    break;
+                case "Разносторонний":
+                    source += "scalene";
+                    break;
+                case "Правильный":
+                    source += "right";
+                    break;
+                case "Тупоугольный":
+                    source += "obtuse";
+                    break;
+                case "Остроугольный":
+                    source += "acute";
+                    break;
+            }
+            return source += ".PNG";
+        }
+
     }
-   
+
 }
 
